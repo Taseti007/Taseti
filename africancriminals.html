@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti — African Criminals</title>
+<meta name="description" content="Taseti Media — African Criminals: Documenting African elites who facilitated and benefited from neocolonial domination." />
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0f18;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --soft:#f8fafc;
+    --brand:#101827;
+    --accent:#b91c1c;
+    --max:1200px;
+    --radius:16px;
+    --shadow:0 14px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:ui-serif, Georgia, "Times New Roman", Times, serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50;}
+  .mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap;}
+  .logo{font-family:ui-serif, Georgia, "Times New Roman", Times, serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block;}
+  .logo small{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem;}
+
+  nav{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;flex:1;display:flex;justify-content:center;}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;}
+  nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  nav a:hover{background:var(--soft);text-decoration:none;}
+  .has-submenu{position:relative;}
+  .submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999;}
+  .submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem;}
+  .submenu a:hover{background:var(--soft);text-decoration:none;}
+  header nav .has-submenu:hover>.submenu{display:block;}
+
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap;}
+  .btn-accent{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .btn:hover{text-decoration:none;background:var(--soft);}
+  .btn-accent:hover{filter:brightness(.95);background:var(--brand);}
+
+  main{padding:40px 0 80px;}
+  .content-container{max-width:1000px;margin:0 auto;}
+  .page-header{text-align:center;margin-bottom:50px;}
+  .page-title{font-size:2.8rem;font-weight:900;margin-bottom:16px;color:var(--ink);line-height:1.1;}
+  .page-subtitle{font-size:1.25rem;color:var(--muted);font-weight:400;line-height:1.5;max-width:800px;margin:0 auto;}
+
+  .intro-box{background:linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);border-left:5px solid var(--accent);padding:28px 32px;margin:40px 0;border-radius:12px;font-size:1.1rem;line-height:1.75;}
+  .quote-box{background:var(--soft);border:2px solid var(--line);padding:24px 32px;margin:40px 0;border-radius:12px;text-align:center;}
+  .quote-text{font-size:1.4rem;font-style:italic;color:var(--ink);margin-bottom:12px;}
+  .quote-author{font-size:1.1rem;font-weight:800;color:var(--muted);}
+
+  .section-block{margin-bottom:60px;}
+  .section-title{font-size:2rem;font-weight:900;margin-bottom:30px;color:var(--ink);padding-bottom:12px;border-bottom:3px solid var(--line);}
+  .person-entry{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:20px;transition:all 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .person-entry:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+  .person-name{font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:8px;}
+  .person-role{font-size:1rem;color:var(--muted);font-weight:700;margin-bottom:12px;}
+  .person-description{font-size:1.05rem;line-height:1.7;color:var(--ink);}
+  p{font-size:1.1rem;line-height:1.75;margin-bottom:20px;}
+  ul{margin:16px 0;padding-left:24px;}
+  li{margin-bottom:10px;line-height:1.7;}
+
+  @media (max-width:768px){.page-title{font-size:2rem;}.page-subtitle{font-size:1.1rem;}.section-title{font-size:1.6rem;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+  <div class="mast">
+    <a class="logo" href="mainpage.html">Taseti<small>Media</small></a>
+    <nav>
+      <ul>
+        <li class="has-submenu">
+          <a href="">Menu</a>
+          <ul class="submenu">
+            <li><a href="africancriminals.html">African Criminals</a></li>
+            <li><a href="africanresistance.html">African Resistance</a></li>
+            <li><a href="colonialeconomy.html">Colonial Economy</a></li>
+            <li><a href="colonialism.html">Colonialism</a></li>
+            <li><a href="europeancriminals.html">European Criminals</a></li>
+            <li><a href="holocausts.html">Holocausts</a></li> 
+            <li><a href="legacy.html">Legacy of Colonization</a></li>
+            <li><a href="modernslavery.html">Modern Slavery</a></li>
+            <li><a href="pan-africanism.html">Pan-Africanism</a></li>
+            <li><a href="religions.html">Religions</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+            <li><a href="whitesupremacy.html">White Supremacy</a></li>
+          </ul>
+        </li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="has-submenu">
+          <a href="">Journal</a>
+          <ul class="submenu">
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="opinion.html">Opinion</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <button id="translate-btn" class="btn btn-accent">French</button>
+    </div>
+  </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="content-container">
+      
+      <div class="page-header">
+        <h1 class="page-title">African Criminals</h1>
+        <p class="page-subtitle">Documenting African elites who facilitated and benefited from neocolonial domination, perpetuating systems of extraction and oppression</p>
+      </div>
+
+      <div class="intro-box">
+        <p><strong>A Necessary Documentation:</strong> This page names African leaders and intermediaries who collaborated with colonial and neocolonial powers to maintain systems of extraction, exploitation, and dependency. These individuals are not victims—they are active participants in structures that enriched themselves and foreign powers while impoverishing their own populations.</p>
+        
+        <p>Accountability requires naming names. Silence protects the guilty. This documentation serves historical memory and future liberation.</p>
+      </div>
+
+      <div class="quote-box">
+        <p class="quote-text">"Sometimes whites wannabe are more dangerous than whites."</p>
+        <p class="quote-author">— John Henrik Clarke</p>
+      </div>
+
+      <section class="section-block">
+        <h2 class="section-title">Post-Independence Neocolonial Elites</h2>
+        <p style="color:var(--muted);margin-bottom:30px;">African leaders who maintained or deepened dependency on former colonial powers through monetary systems, military alliances, and economic extraction agreements.</p>
+
+        <div class="person-entry">
+          <div class="person-name">Paul Biya</div>
+          <div class="person-role">President of Cameroon (1982–Present)</div>
+          <p class="person-description">Epitome of the rentier state sustained by external backing. Has ruled Cameroon for over four decades through French military support, systemic corruption, and authoritarian control. Maintains the CFA franc system, hosts French military bases, and presides over massive inequality while extracting state resources for personal enrichment.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Ali Bongo Ondimba</div>
+          <div class="person-role">President of Gabon (2009–2023)</div>
+          <p class="person-description">Inherited power from his father and continued Franco-African networks governing Gabon. Maintained France's preferential access to oil and mineral wealth while accumulating personal fortune through corruption. His dynasty represents continuity of Françafrique.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Omar Bongo</div>
+          <div class="person-role">President of Gabon (1967–2009)</div>
+          <p class="person-description">Archetype of Françafrique patronage systems. Ruled for 42 years with French support, converting Gabon's oil wealth into personal fortune while maintaining dependency. His regime perfected the model of compliant African leadership prioritizing external alliances over national development.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Blaise Compaoré</div>
+          <div class="person-role">President of Burkina Faso (1987–2014)</div>
+          <p class="person-description">Came to power by assassinating Thomas Sankara, Africa's most principled anti-imperialist leader. Reversed Sankara's policies of self-sufficiency, realigning Burkina Faso with French interests. His 27-year rule demonstrates how revolutionary movements can be destroyed through internal betrayal.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Idriss Déby</div>
+          <div class="person-role">President of Chad (1990–2021)</div>
+          <p class="person-description">Maintained power through security subcontracting and Western military partnerships. Chad became a strategic pillar of French operations in the Sahel. Extracted oil wealth for elite enrichment while the population endured extreme poverty.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Hassan II</div>
+          <div class="person-role">King of Morocco (1961–1999)</div>
+          <p class="person-description">Presided over monarchy combining authoritarianism with Western alliances. Maintained Morocco's strategic partnerships with France and the United States, suppressed internal opposition, and consolidated royal family control over economy.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Félix Houphouët-Boigny</div>
+          <div class="person-role">President of Ivory Coast (1960–1993)</div>
+          <p class="person-description">Architect of voluntary integration into French economic order. Maintained CFA franc, hosted French bases, and ensured French companies dominated the economy. His "Ivorian miracle" enriched elites while creating long-term dependency.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Goodluck Jonathan</div>
+          <div class="person-role">President of Nigeria (2010–2015)</div>
+          <p class="person-description">Presided over Nigeria during peak oil prices yet failed to transform the extractive oil economy. His administration was marked by massive corruption scandals. Maintained neo-colonial structure where multinationals extract resources while population sees minimal benefit.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Paul Kagame</div>
+          <div class="person-role">President of Rwanda (2000–Present)</div>
+          <p class="person-description">Complex figure who rebuilt Rwanda after genocide but serves Western interests in regional mineral flows. Rwanda has become a transit hub for Congolese minerals extracted through conflict. Maintains close ties with Western powers and suppresses domestic dissent.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Jomo Kenyatta</div>
+          <div class="person-role">President of Kenya (1964–1978)</div>
+          <p class="person-description">Kenya's founding president who led independence but facilitated land accumulation inherited from colonialism. Rather than redistributing land seized by British settlers, Kenyatta and elites purchased these lands, creating a new African landowning class perpetuating colonial structures.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Teodoro Obiang Nguema Mbasogo</div>
+          <div class="person-role">President of Equatorial Guinea (1979–Present)</div>
+          <p class="person-description">One of Africa's longest-ruling dictators, presiding over an authoritarian oil state with extreme inequality. Oil revenues flow to ruling family and foreign companies, not national development.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Mohammed VI</div>
+          <div class="person-role">King of Morocco (1999–Present)</div>
+          <p class="person-description">Presides over monarchical capitalism combining traditional authority with modern extraction. Maintains Morocco's occupation of Western Sahara, hosts U.S. military facilities, and maintains close economic ties with Europe while accumulating vast royal wealth.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Yoweri Museveni</div>
+          <div class="person-role">President of Uganda (1986–Present)</div>
+          <p class="person-description">Came to power as a revolutionary but evolved into long-term ruler sustained by Western aid and regional security partnerships. Uganda serves as military proxy for Western interventions. Has amended constitution to remain in power indefinitely.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Alassane Ouattara</div>
+          <div class="person-role">President of Ivory Coast (2010–Present)</div>
+          <p class="person-description">Former IMF deputy managing director who brought CFA franc orthodoxy to Ivory Coast's presidency. Came to power with French military intervention. His regime prioritizes macroeconomic stability and foreign investment over structural transformation.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Macky Sall</div>
+          <div class="person-role">President of Senegal (2012–2024)</div>
+          <p class="person-description">Continued Senegal's tradition of maintaining French military and monetary influence. Despite discovering oil and gas reserves, Senegal remains within CFA franc zone and hosts French military bases.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Denis Sassou-Nguesso</div>
+          <div class="person-role">President of Republic of Congo (1979–1992, 1997–Present)</div>
+          <p class="person-description">Presides over oil-rich nation trapped in debt dependency. Congo-Brazzaville's oil revenues flow to elite enrichment and debt service while infrastructure crumbles. Maintains power through French backing and Chinese loans.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Léopold Sédar Senghor</div>
+          <div class="person-role">President of Senegal (1960–1980)</div>
+          <p class="person-description">Celebrated as poet-president, but his political independence came without economic rupture from France. Maintained CFA franc, hosted French bases, and ensured French economic dominance. His cultural Pan-Africanism masked political and economic continuity with colonial structures.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Mobutu Sese Seko</div>
+          <div class="person-role">President of Zaire/Congo (1965–1997)</div>
+          <p class="person-description">Strategic pillar of Western neo-colonial order during the Cold War. Came to power with CIA backing after Lumumba's assassination. Plundered Zaire's mineral wealth for over three decades while receiving Western support due to anti-communist stance. His kleptocracy accumulated billions while the Congolese state collapsed.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Jacob Zuma</div>
+          <div class="person-role">President of South Africa (2009–2018)</div>
+          <p class="person-description">Presided over massive corruption enriching political networks and mining capital. State capture scandal demonstrated how post-apartheid political class could be compromised by corporate interests. Failed to transform fundamentally unequal economic structures inherited from apartheid.</p>
+        </div>
+
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Colonial Intermediaries and Historical Collaborators</h2>
+        <p style="color:var(--muted);margin-bottom:30px;">Pre-independence African rulers and intermediaries who collaborated with colonial powers, participated in slave trade, or negotiated protectorates that facilitated European domination.</p>
+
+        <div class="person-entry">
+          <div class="person-name">Tippu Tip</div>
+          <div class="person-role">Slave Trader (1832–1905)</div>
+          <p class="person-description">Swahili-Zanzibari trader who built an empire in eastern Congo through slave trade and ivory commerce. Collaborated with European explorers and later with Congo Free State, serving as governor under Leopold II. His operations enslaved thousands and facilitated European penetration into Central Africa.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Rabih az-Zubayr</div>
+          <div class="person-role">Warlord (1842–1900)</div>
+          <p class="person-description">Built military empire around Lake Chad through slave raiding and regional domination. His operations destabilized vast regions, making them vulnerable to French conquest. Demonstrates how internal African militarized slave-trading systems facilitated later colonial domination.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Msiri</div>
+          <div class="person-role">Ruler of Katanga (1830s–1891)</div>
+          <p class="person-description">Controlled copper-rich Katanga and engaged in slave trading while negotiating with European powers. Attempted to play European powers against each other but his participation in extractive systems made his kingdom a target. His execution by Belgian agents symbolizes how African rulers who collaborated were ultimately disposable.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Lewanika</div>
+          <div class="person-role">Lozi King (1842–1916)</div>
+          <p class="person-description">Negotiated British protectorate status for Barotseland as strategy to preserve power against regional rivals. His agreement with British South Africa Company facilitated British colonial expansion. Represents rulers who sought protection through colonial alliances, inadvertently enabling wider conquest.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Khama III</div>
+          <div class="person-role">Kgosi of Bangwato (1837–1923)</div>
+          <p class="person-description">Allied with Britain against Boer settlers as survival strategy. Accepted British protectorate status for Bechuanaland, preventing Boer expansion but facilitating British colonial control. Protected his people from immediate threats while enabling long-term colonial domination.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Al-Hajj Umar Tall</div>
+          <div class="person-role">Islamic Empire Builder (1794–1864)</div>
+          <p class="person-description">Built vast Islamic empire in West Africa through religious conquest. His Toucouleur Empire engaged in internal slavery and warfare that weakened regional societies before French conquest. His military campaigns created instability that facilitated later colonization.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Samuel Ajayi Crowther</div>
+          <div class="person-role">Anglican Bishop (1809–1891)</div>
+          <p class="person-description">First African Anglican bishop who served as missionary intermediary within British imperial structures in West Africa. Though a freed slave and accomplished scholar, his missionary work facilitated British cultural and religious colonization of Nigeria.</p>
+        </div>
+
+        <div class="person-entry">
+          <div class="person-name">Sultan Said bin Sultan</div>
+          <div class="person-role">Sultan of Oman and Zanzibar (1791–1856)</div>
+          <p class="person-description">Built Indian Ocean commercial empire centered on Zanzibar fundamentally based on East African slave trade. Captured and sold hundreds of thousands of Africans into slavery while maintaining relations with European powers. His empire enriched Arab and Swahili elites while devastating mainland African societies.</p>
+        </div>
+
+      </section>
+
+      <section class="section-block" style="margin-top:70px;">
+        <h2 class="section-title">Conclusion: Accountability and Historical Memory</h2>
+        
+        <div class="intro-box">
+          <p><strong>Why This Documentation Matters:</strong></p>
+          
+          <p>These individuals are documented not to deflect responsibility from colonial and neocolonial powers, but to establish a complete historical record. European colonialism and neocolonialism could not have functioned without African collaborators who chose power and wealth over their own people.</p>
+          
+          <p><strong>Patterns of Collaboration:</strong></p>
+          <ul>
+            <li>Maintaining monetary systems (CFA franc) that extract wealth and limit sovereignty</li>
+            <li>Hosting foreign military bases enabling external intervention</li>
+            <li>Prioritizing external alliances over national development</li>
+            <li>Accumulating personal wealth through state capture and resource extraction</li>
+            <li>Suppressing movements for genuine independence and transformation</li>
+            <li>Trading sovereignty for external protection and personal enrichment</li>
+          </ul>
+          
+          <p><strong>Historical Responsibility:</strong> Colonial-era intermediaries participated in slave trade, negotiated protectorates, and facilitated European conquest. Their choices were often constrained by violent circumstances, yet they bear responsibility for enabling systems that enslaved and colonized millions.</p>
+          
+          <p><strong>Contemporary Complicity:</strong> Post-independence leaders had choices. They chose to maintain colonial economic structures, accept foreign military presence, and prioritize elite enrichment over national transformation. These were deliberate political and economic decisions, not inevitable outcomes.</p>
+          
+          <p><strong>The John Henrik Clarke Warning:</strong> "Sometimes whites wannabe are more dangerous than whites." African elites who internalize colonial values and serve external interests can be more effective tools of oppression than direct colonial administration. They provide African faces to neocolonial structures, making exploitation appear legitimate.</p>
+          
+          <p><strong>Moving Forward:</strong> True liberation requires acknowledging internal complicity alongside external oppression. African agency exists—it has been exercised both for resistance and for collaboration. Naming those who collaborated is essential to preventing future betrayals and building genuine sovereignty.</p>
+          
+          <p style="margin-top:24px;margin-bottom:0;"><strong>This documentation serves:</strong> Historical memory against erasure, accountability for crimes and betrayals, education for future generations, and determination that such collaboration will not be forgotten or repeated.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

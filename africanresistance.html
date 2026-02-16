@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti — African Resistance</title>
+<meta name="description" content="Taseti Media — African Resistance: Documenting centuries of African leaders, fighters, and thinkers who resisted colonialism and fought for sovereignty." />
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0f18;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --soft:#f8fafc;
+    --brand:#101827;
+    --accent:#b91c1c;
+    --max:1200px;
+    --radius:16px;
+    --shadow:0 14px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:ui-serif, Georgia, "Times New Roman", Times, serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50;}
+  .mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap;}
+  .logo{font-family:ui-serif, Georgia, "Times New Roman", Times, serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block;}
+  .logo small{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem;}
+
+  nav{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;flex:1;display:flex;justify-content:center;}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;}
+  nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  nav a:hover{background:var(--soft);text-decoration:none;}
+  .has-submenu{position:relative;}
+  .submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999;}
+  .submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem;}
+  .submenu a:hover{background:var(--soft);text-decoration:none;}
+  header nav .has-submenu:hover>.submenu{display:block;}
+
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap;}
+  .btn-accent{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .btn:hover{text-decoration:none;background:var(--soft);}
+  .btn-accent:hover{filter:brightness(.95);background:var(--brand);}
+
+  main{padding:40px 0 80px;}
+  .content-container{max-width:1100px;margin:0 auto;}
+  
+  .page-header{text-align:center;margin-bottom:50px;}
+  .page-title{font-size:2.8rem;font-weight:900;margin-bottom:16px;color:var(--ink);line-height:1.1;}
+  .page-subtitle{font-size:1.25rem;color:var(--muted);font-weight:400;line-height:1.5;max-width:900px;margin:0 auto;}
+
+  .intro-section{background:linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);border-left:5px solid #f59e0b;padding:28px 32px;margin:40px 0;border-radius:12px;font-size:1.1rem;line-height:1.75;}
+  
+  .century-section{margin-bottom:50px;}
+  .century-title{font-size:2rem;font-weight:900;margin-bottom:25px;color:var(--ink);padding-bottom:12px;border-bottom:3px solid var(--line);}
+  
+  .resistance-list{list-style:none;margin:0;padding:0;}
+  .resistance-list li{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 24px;margin-bottom:12px;transition:all 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .resistance-list li:hover{box-shadow:var(--shadow);transform:translateX(4px);}
+  .resistance-list strong{font-size:1.15rem;color:var(--ink);font-weight:900;}
+  
+  .closing-quote{background:var(--soft);border:2px solid var(--line);padding:28px 32px;margin:50px 0;border-radius:12px;text-align:center;font-size:1.3rem;font-weight:800;color:var(--ink);font-style:italic;}
+
+  .context-box{background:var(--soft);border:2px solid var(--line);padding:28px 32px;margin:40px 0;border-radius:12px;font-size:1.05rem;line-height:1.75;}
+  
+  p{font-size:1.05rem;line-height:1.75;margin-bottom:18px;}
+
+  @media (max-width:768px){
+    .page-title{font-size:2rem;}
+    .page-subtitle{font-size:1.1rem;}
+    .century-title{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+  <div class="mast">
+    <a class="logo" href="mainpage.html">Taseti<small>Media</small></a>
+    <nav>
+      <ul>
+        <li class="has-submenu">
+          <a href="">Menu</a>
+          <ul class="submenu">
+            <li><a href="africancriminals.html">African Criminals</a></li>
+            <li><a href="africanresistance.html">African Resistance</a></li>
+            <li><a href="colonialeconomy.html">Colonial Economy</a></li>
+            <li><a href="colonialism.html">Colonialism</a></li>
+            <li><a href="europeancriminals.html">European Criminals</a></li>
+            <li><a href="holocausts.html">Holocausts</a></li> 
+            <li><a href="legacyofcolonization.html">Legacy of Colonization</a></li>
+            <li><a href="modernslavery.html">Modern Slavery</a></li>
+            <li><a href="pan-africanism.html">Pan-Africanism</a></li>
+            <li><a href="religions.html">Religions</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+            <li><a href="whitesupremacy.html">White Supremacy</a></li>
+          </ul>
+        </li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="has-submenu">
+          <a href="">Journal</a>
+          <ul class="submenu">
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="opinion.html">Opinion</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <button id="translate-btn" class="btn btn-accent">French</button>
+    </div>
+  </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="content-container">
+      
+      <div class="page-header">
+        <h1 class="page-title">African Resistance</h1>
+        <p class="page-subtitle">A chronicle of African leaders, fighters, and thinkers who resisted colonialism, fought for sovereignty, and built movements for liberation across five centuries</p>
+      </div>
+
+      <div class="intro-section">
+        <p><strong>The Tradition of Resistance:</strong> African resistance to colonialism and oppression spans centuries, from early encounters with European slave traders to contemporary struggles against neocolonial domination. This page honors the leaders, warriors, intellectuals, and ordinary people who refused submission, fought for their land, and preserved African dignity against overwhelming force.</p>
+        
+        <p>These figures represent diverse forms of resistance: military campaigns, diplomatic negotiations, spiritual leadership, intellectual work, and revolutionary movements. Together, they demonstrate that African agency has always existed, that resistance has been constant, and that the struggle for genuine sovereignty continues.</p>
+      </div>
+
+      <section class="century-section">
+        <h2 class="century-title">15th – 17th Centuries: Early Resistance</h2>
+        <ul class="resistance-list">
+          <li><strong>Nzinga Mbande (Ndongo / Matamba)</strong> – Diplomatic and military resistance against Portuguese colonization. Queen who fought for 40 years, combining battlefield strategy with diplomatic maneuvering.</li>
+          <li><strong>Askia Muhammad (Songhai Empire)</strong> – Maintained African imperial sovereignty and Islamic scholarship at the height of European expansion.</li>
+          <li><strong>Nganga Nzumbi (Kingdom of Kongo)</strong> – Resisted European interference in Kongolese politics and economy during early contact period.</li>
+          <li><strong>Tiramakhan Traoré (Mali Empire)</strong> – Military expansion and preservation of political autonomy during period of regional transformation.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">18th Century: Consolidation and Autonomy</h2>
+        <ul class="resistance-list">
+          <li><strong>Karamoko Alfa (Fouta-Djalon)</strong> – Established autonomous political-religious authority resisting external domination.</li>
+          <li><strong>Rumanyika (Karagwe)</strong> – Maintained regional sovereignty in East Africa against expanding external pressures.</li>
+          <li><strong>Ibrahima Sory (Fouta-Djalon)</strong> – Consolidated an independent African state with Islamic governance structures.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">19th Century: Major Resistance to Colonial Conquest</h2>
+        <p style="color:var(--muted);margin-bottom:25px;">The century of the "Scramble for Africa" witnessed the most intense African military and political resistance to European colonization.</p>
+        
+        <ul class="resistance-list">
+          <li><strong>Samori Touré (Wassoulou Empire)</strong> – Organized sustained military resistance against French colonization, employing scorched-earth tactics and modern weapons procurement.</li>
+          <li><strong>Lat Dior Ngoné Latyr Diop (Cayor)</strong> – Damel of Cayor who opposed French railway construction and colonial domination until his death in battle.</li>
+          <li><strong>Behanzin (Dahomey)</strong> – Led armed resistance to French conquest, deploying female warriors (Dahomey Amazons) in defense of sovereignty.</li>
+          <li><strong>Babemba Traoré (Kénédougou)</strong> – Refused to submit to colonial rule, defending his kingdom against French expansion in West Africa.</li>
+          <li><strong>Sarraounia Mangou (Azna, Niger)</strong> – Female queen and spiritual leader who defeated French column at Battle of Lougou, demonstrating women's military leadership.</li>
+          <li><strong>Al-Hajj Umar Tall (Toucouleur Empire)</strong> – Built Islamic empire through political jihad, maintaining imperial autonomy before French conquest.</li>
+          <li><strong>Shaka Zulu (Zulu Kingdom)</strong> – Transformed Zulu military organization, constructing powerful African state that resisted European expansion.</li>
+          <li><strong>Cetshwayo kaMpande (Zululand)</strong> – Defeated British Empire at Battle of Isandlwana (1879), inflicting one of Britain's worst colonial defeats.</li>
+          <li><strong>Moshoeshoe I (Lesotho)</strong> – Combined diplomatic skill with military resistance, creating buffer state that preserved some autonomy.</li>
+          <li><strong>Sekhukhune I (Bapedi)</strong> – Waged prolonged armed struggle against Boer and British colonial expansion in Southern Africa.</li>
+          <li><strong>Lobengula (Ndebele Kingdom)</strong> – Opposed British expansion and Cecil Rhodes' colonization schemes in what became Rhodesia.</li>
+          <li><strong>Mpezeni (Ngoni)</strong> – Led armed resistance against European colonization in Central Africa.</li>
+          <li><strong>Menelik II (Ethiopia)</strong> – Achieved decisive victory against Italy at Battle of Adwa (1896), preserving Ethiopian independence.</li>
+          <li><strong>Tewodros II (Ethiopia)</strong> – Centralized Ethiopian state and resisted European interference, though ultimately defeated by British expedition.</li>
+          <li><strong>Yohannes IV (Ethiopia)</strong> – Defended Ethiopian imperial sovereignty against Egyptian, Italian, and Sudanese threats.</li>
+          <li><strong>Kabalega (Bunyoro)</strong> – Led prolonged guerrilla resistance against British colonization in Uganda.</li>
+          <li><strong>Mkwawa (Hehe)</strong> – Conducted guerrilla warfare against German colonial forces in Tanganyika until his death.</li>
+          <li><strong>Laibon Mbatian (Maasai)</strong> – Political-spiritual leader who resisted European encroachment on Maasai lands.</li>
+          <li><strong>Yaa Asantewaa (Ashanti Empire)</strong> – Queen Mother who led 1900 War of the Golden Stool against British, becoming symbol of female resistance.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">Early 20th Century: Final Resistances & Transitions</h2>
+        <ul class="resistance-list">
+          <li><strong>Nehanda Charwe Nyakasikana (Shona)</strong> – Spiritual leader of anti-British resistance in Rhodesia, executed but remaining symbol of liberation struggle.</li>
+          <li><strong>Mekatilili wa Menza (Giriama)</strong> – Led revolt against British colonial administration and forced labor in Kenya.</li>
+          <li><strong>Khama III (Botswana)</strong> – Employed diplomatic resistance to prevent full annexation of Bechuanaland into South Africa.</li>
+          <li><strong>Mutara III Rudahigwa (Rwanda)</strong> – Monarch who navigated colonial domination, Christianity, and pressures of modernizing state.</li>
+          <li><strong>Cheikh Ahmadou Bamba (Senegal)</strong> – Spiritual leader whose peaceful resistance through faith and discipline challenged French colonial authority.</li>
+          <li><strong>Mohammed Abdulle Hassan (Somalia)</strong> – "Mad Mullah" who led 20-year armed resistance against British, Italian, and Ethiopian forces.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">Mid-20th Century: Anti-Colonial Struggles & Independence</h2>
+        <p style="color:var(--muted);margin-bottom:25px;">The era of independence movements, nationalist leaders, and Pan-African consciousness.</p>
+        
+        <ul class="resistance-list">
+          <li><strong>Kwame Nkrumah (Ghana)</strong> – Pan-African visionary who linked political independence to economic liberation, founding father of African unity.</li>
+          <li><strong>Patrice Lumumba (Congo)</strong> – Radical nationalist symbolizing genuine independence and anti-imperialism, assassinated for refusing neocolonial compromise.</li>
+          <li><strong>Ahmed Sékou Touré (Guinea)</strong> – Only leader to vote "No" to continued French control, prioritizing sovereignty despite economic consequences.</li>
+          <li><strong>Modibo Keïta (Mali)</strong> – Socialist advocate of African unity and state-led development, overthrown for his radicalism.</li>
+          <li><strong>Amílcar Cabral (Guinea-Bissau / Cape Verde)</strong> – Revolutionary intellectual emphasizing culture as weapon of liberation, assassinated before independence.</li>
+          <li><strong>Ruben Um Nyobè (Cameroon)</strong> – Early independence martyr silenced by French colonial repression before independence.</li>
+          <li><strong>Félix-Roland Moumié (Cameroon)</strong> – Internationalized Cameroon's liberation struggle, assassinated by French intelligence in Switzerland.</li>
+          <li><strong>Ernest Ouandié (Cameroon)</strong> – Last armed anti-colonial leader in Cameroon, executed after nominal independence.</li>
+          <li><strong>Jomo Kenyatta (Kenya)</strong> – Nationalist leader who led Kenya to independence but later embodied conservative postcolonial governance.</li>
+          <li><strong>Julius Nyerere (Tanzania)</strong> – Ethical socialist promoting self-reliance through ujamaa philosophy and African socialism.</li>
+          <li><strong>Haile Selassie (Ethiopia)</strong> – Symbol of African sovereignty who resisted Italian fascist invasion and inspired global Pan-African movement.</li>
+          <li><strong>Gamal Abdel Nasser (Egypt)</strong> – Anti-imperialist and Pan-Arab leader who inspired Third World nationalism and Non-Aligned Movement.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">Late 20th Century: Post-Colonial States & Radical Movements</h2>
+        <ul class="resistance-list">
+          <li><strong>Thomas Sankara (Burkina Faso)</strong> – Revolutionary icon of integrity, feminism, and anti-imperialism who rejected foreign aid and debt.</li>
+          <li><strong>Samora Machel (Mozambique)</strong> – Marxist liberation leader focused on social transformation and regional solidarity.</li>
+          <li><strong>Agostinho Neto (Angola)</strong> – Poet-president merging culture and socialist revolution in Angola's liberation struggle.</li>
+          <li><strong>Eduardo Mondlane (Mozambique)</strong> – Intellectual founder of FRELIMO, emphasizing national unity across ethnic lines.</li>
+          <li><strong>Nelson Mandela (South Africa)</strong> – Leader who balanced armed resistance with reconciliation, ending apartheid through negotiation.</li>
+          <li><strong>Steve Biko (South Africa)</strong> – Philosopher of Black Consciousness and psychological liberation, murdered by apartheid police.</li>
+          <li><strong>Chris Hani (South Africa)</strong> – Revolutionary socialist voice within ANC, assassinated before post-apartheid transition.</li>
+          <li><strong>Robert Mugabe (Zimbabwe)</strong> – Liberation hero whose authoritarian rule later contradicted his anti-colonial legacy.</li>
+          <li><strong>Laurent-Désiré Kabila (DRC)</strong> – Rebel leader who ended Mobutu's dictatorship but failed to achieve structural transformation.</li>
+          <li><strong>Marien Ngouabi (Congo-Brazzaville)</strong> – Military Marxist attempting socialist state-building, assassinated in 1977.</li>
+          <li><strong>Muammar Gaddafi (Libya)</strong> – Pan-African radical blending anti-Western rhetoric with authoritarianism and resource nationalism.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">20th – 21st Centuries: African Intellectual Resistance</h2>
+        <p style="color:var(--muted);margin-bottom:25px;">Scholars, historians, and thinkers who challenged colonial narratives and restored African contributions to world civilization.</p>
+        
+        <ul class="resistance-list">
+          <li><strong>Cheikh Anta Diop</strong> – Historian who proved through scientific evidence that Ancient Egypt was a Black African civilization.</li>
+          <li><strong>John Henrik Clarke</strong> – Pioneer historian restoring African contributions to world history and challenging Eurocentric narratives.</li>
+          <li><strong>Yosef Ben-Jochannan</strong> – Egyptologist and historian proving African origins of major religions and Western philosophy.</li>
+          <li><strong>Ivan Van Sertima</strong> – Historian documenting African presence in Americas before Columbus and challenging historical erasure.</li>
+          <li><strong>Anthony Browder</strong> – Historian and educator teaching African-centered history and Kemetic contributions to civilization.</li>
+          <li><strong>Charles Finch</strong> – Scholar connecting African spirituality, science, and contributions to human knowledge.</li>
+          <li><strong>Bobby Hemmitt</strong> – Teacher of African esoteric knowledge and spiritual history.</li>
+          <li><strong>Walter Williams</strong> – Historian documenting African achievements and challenging racist historical narratives.</li>
+          <li><strong>Mongo Beti</strong> – Literary critic of colonialism and postcolonial elites through satirical novels.</li>
+          <li><strong>Walter Rodney</strong> – Scholar-activist exposing how Europe underdeveloped Africa through exploitation.</li>
+          <li><strong>Samir Amin</strong> – Political economist critiquing global capitalism and dependency theory.</li>
+          <li><strong>Joseph Ki-Zerbo</strong> – Advocate of endogenous African development rooted in African values and knowledge.</li>
+          <li><strong>Ngũgĩ wa Thiong'o</strong> – Champion of linguistic decolonization and writing in African languages.</li>
+          <li><strong>Ali Mazrui</strong> – Thinker on culture, identity, and African modernity in global context.</li>
+          <li><strong>Mahmood Mamdani</strong> – Analyst of colonial governance structures and postcolonial violence.</li>
+          <li><strong>Achille Mbembe</strong> – Theorist of power, postcolony, and global African futures.</li>
+          <li><strong>Felwine Sarr</strong> – Advocate of African futures beyond Western development orthodoxy.</li>
+        </ul>
+      </section>
+
+      <section class="century-section">
+        <h2 class="century-title">21st Century: Contemporary Resistance & New Movements</h2>
+        <ul class="resistance-list">
+          <li><strong>Ibrahim Traoré (Burkina Faso)</strong> – Military leader invoking Sankara-era anti-imperialism and African sovereignty.</li>
+          <li><strong>Assimi Goïta (Mali)</strong> – Coup leader challenging French military presence and neocolonial influence in Sahel.</li>
+          <li><strong>Abdourahamane Tiani (Niger)</strong> – Leader of military government that expelled French forces and reasserted sovereignty.</li>
+          <li><strong>Isaias Afwerki (Eritrea)</strong> – Liberation leader who became authoritarian ruler but maintains anti-Western independence.</li>
+          <li><strong>Julius Malema (South Africa)</strong> – Radical populist challenging post-apartheid economic inequality and land ownership.</li>
+          <li><strong>Bobi Wine (Uganda)</strong> – Cultural figure turned opposition leader challenging Museveni's long rule.</li>
+          <li><strong>Kémi Séba (Benin/France)</strong> – Pan-African activist opposing CFA franc and Western monetary control in Africa.</li>
+          <li><strong>Nathalie Yamb</strong> – Diaspora voice promoting African sovereignty narratives and challenging French neocolonialism.</li>
+        </ul>
+      </section>
+
+      <div class="context-box" style="margin-top:60px;">
+        <p><strong>Beyond Famous Names:</strong> The history of African colonization is often reduced to famous leaders and landmark battles, but the truth is far more complex. Beyond textbook names, countless local figures fought relentlessly to defend their communities and assert African sovereignty.</p>
+        
+        <p>While Samory Touré is widely remembered, it was his lieutenants, village chiefs, and local militias who sustained prolonged guerrilla campaigns. In Central Africa, figures such as Makoko of the Kingdom of Benin and Ngongo Luali orchestrated military and diplomatic strategies maintaining local autonomy. Women like Nana Yaa Korkor led grassroots revolts against forced labor and punitive taxation, demonstrating that resistance was embedded in everyday communities.</p>
+        
+        <p><strong>The Diasporic Contribution:</strong> The African diaspora has always been a source of intellectual and moral resistance. Across the Americas and Caribbean, thinkers such as Marcus Garvey, W.E.B. Du Bois, and Aimé Césaire forged ideas that inspired continental liberation movements. Their writings and activism provided Africans with frameworks to conceptualize sovereignty, identity, and Pan-African solidarity. Leaders like Kwame Nkrumah and Léopold Sédar Senghor drew on these diasporic influences, proving that African liberation was a transatlantic struggle grounded in shared history and collective vision.</p>
+      </div>
+
+      <div class="closing-quote">
+        "Neocolonialism will not fall because everyone agrees. It will fall because enough people stop asking permission."
+      </div>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

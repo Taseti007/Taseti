@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti — Support Independent Journalism</title>
+<meta name="description" content="Taseti Media — Donations: Support independent journalism free from corporate, government, and political influence." />
+<style>
+  :root{--bg:#ffffff;--ink:#0b0f18;--muted:#4b5563;--line:#e5e7eb;--soft:#f8fafc;--brand:#101827;--accent:#b91c1c;--max:1200px;--radius:16px;--shadow:0 14px 28px rgba(0,0,0,.10)}
+  *{box-sizing:border-box}body{margin:0;font-family:ui-serif,Georgia,"Times New Roman",Times,serif;color:var(--ink);background:var(--bg);line-height:1.65}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50}.mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap}.logo{font-family:ui-serif,Georgia,"Times New Roman",Times,serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block}.logo small{display:block;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem}
+  nav{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;flex:1;display:flex;justify-content:center}nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}nav a:hover{background:var(--soft);text-decoration:none}.has-submenu{position:relative}.submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999}.submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem}.submenu a:hover{background:var(--soft);text-decoration:none}header nav .has-submenu:hover>.submenu{display:block}
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}.btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap}.btn-accent{background:var(--brand);color:#fff;border-color:var(--brand)}.btn:hover{text-decoration:none;background:var(--soft)}.btn-accent:hover{filter:brightness(.95);background:var(--brand)}
+  main{padding:40px 0 80px}
+  .hero{background:linear-gradient(135deg,#101827,#b91c1c);color:#fff;padding:100px 40px;border-radius:16px;text-align:center;margin-bottom:60px}.hero h1{font-size:3rem;margin-bottom:20px;line-height:1.2;font-weight:900}.hero p{font-size:1.25rem;max-width:700px;margin:0 auto 30px;line-height:1.6}.hero .btn{font-size:1.1rem;padding:14px 28px}
+  .content-container{max-width:900px;margin:0 auto}.section-block{margin-bottom:50px}.section-title{font-size:2rem;font-weight:900;margin-bottom:25px;color:var(--ink);padding-bottom:12px;border-bottom:3px solid var(--line)}
+  .info-box{background:var(--soft);border:2px solid var(--line);padding:28px 32px;margin:30px 0;border-radius:12px;font-size:1.1rem;line-height:1.75}
+  .highlight-box{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border-left:5px solid #f59e0b;padding:28px 32px;margin:40px 0;border-radius:12px;font-size:1.1rem;line-height:1.75}
+  p{font-size:1.1rem;line-height:1.75;margin-bottom:20px}ul{margin:20px 0;padding-left:28px}li{margin-bottom:12px;line-height:1.7;font-size:1.05rem}strong{font-weight:800;color:var(--ink)}
+  .donation-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:30px 0}.donation-card{background:#fff;border:2px solid var(--line);border-radius:var(--radius);padding:28px;text-align:center;transition:all .3s ease}.donation-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--accent)}.donation-amount{font-size:2.5rem;font-weight:900;color:var(--accent);margin-bottom:12px}.donation-desc{font-size:1rem;color:var(--muted);margin-bottom:20px}
+  @media (max-width:768px){.hero h1{font-size:2rem}.hero p{font-size:1.1rem}.section-title{font-size:1.6rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="mast"><a class="logo" href="mainpage.html">Taseti<small>Media</small></a><nav><ul><li class="has-submenu"><a href="">Menu</a><ul class="submenu"><li><a href="africancriminals.html">African Criminals</a></li><li><a href="africanresistance.html">African Resistance</a></li><li><a href="colonialeconomy.html">Colonial Economy</a></li><li><a href="colonialism.html">Colonialism</a></li><li><a href="europeancriminals.html">European Criminals</a></li><li><a href="holocausts.html">Holocausts</a></li><li><a href="legacyofcolonization.html">Legacy of Colonization</a></li><li><a href="modernslavery.html">Modern Slavery</a></li><li><a href="pan-africanism.html">Pan-Africanism</a></li><li><a href="religions.html">Religions</a></li><li><a href="spirituality.html">Spirituality</a></li><li><a href="whitesupremacy.html">White Supremacy</a></li></ul></li><li><a href="donations.html">Donations</a></li><li><a href="gallery.html">Gallery</a></li><li class="has-submenu"><a href="">Journal</a><ul class="submenu"><li><a href="aboutus.html">About us</a></li><li><a href="opinion.html">Opinion</a></li><li><a href="spirituality.html">Spirituality</a></li></ul></li></ul></nav><div class="head-actions"><button id="translate-btn" class="btn btn-accent">French</button></div></div></div></header>
+<main><div class="wrap">
+
+<section class="hero">
+<h1>Support Independent Journalism</h1>
+<p>Taseti is an independent journal publishing long-form analysis, historical clarity, and writing free from ideological pressure, corporate influence, and political interference.</p>
+<a class="btn btn-accent" href="#donate" style="background:#fff;color:var(--brand);border-color:#fff;">Donate Now</a>
+</section>
+
+<div class="content-container">
+
+<section class="section-block">
+<h2 class="section-title">Why Your Support Matters</h2>
+<p><strong>Taseti is not funded by governments, corporations, churches, NGOs, or political parties.</strong> We receive no institutional backing, no advertising revenue, and no grants that come with editorial conditions. This independence is not accidental—it is deliberate, and it is essential to our mission.</p>
+<p>Your support ensures that our analysis remains credible, our investigations remain fearless, and our conclusions remain honest. We do not moderate our findings to please funders. We do not soften our language to protect advertisers. We do not avoid uncomfortable truths to maintain access to power.</p>
+</section>
+
+<div class="highlight-box">
+<p><strong>What Your Donations Support:</strong></p>
+<ul>
+<li><strong>Research and Investigation:</strong> In-depth historical research, fact-checking, and documentation require time and resources</li>
+<li><strong>Writing and Analysis:</strong> Producing comprehensive, well-researched articles that challenge dominant narratives</li>
+<li><strong>Technical Infrastructure:</strong> Hosting, security, and maintenance of our platform</li>
+<li><strong>Long-Term Archiving:</strong> Preserving historical documentation for future generations</li>
+<li><strong>Independence:</strong> Maintaining editorial freedom from all external pressures</li>
+</ul>
+</div>
+
+<section class="section-block">
+<h2 class="section-title">Our Commitment to You</h2>
+<div class="info-box">
+<p><strong>Complete Editorial Independence:</strong> Donations do not influence our coverage, conclusions, or editorial choices. We write what needs to be written, not what funders want to hear.</p>
+<p><strong>Transparency:</strong> We are accountable to our readers, not to institutional funders with hidden agendas.</p>
+<p><strong>No Paywalls:</strong> All Taseti content remains freely accessible. Knowledge should not be gatekept by wealth.</p>
+<p><strong>Historical Integrity:</strong> We document truth, preserve memory, and refuse to sanitize history for contemporary comfort.</p>
+</div>
+</section>
+
+<section class="section-block" id="donate">
+<h2 class="section-title">Support Taseti</h2>
+<p>Choose an amount that works for you. Every contribution—whether one-time or recurring—helps us maintain independence and continue our work.</p>
+
+<div class="donation-options">
+<div class="donation-card">
+<div class="donation-amount">$5</div>
+<div class="donation-desc">Support one article's research</div>
+<a href="#" class="btn btn-accent">Donate $5</a>
+</div>
+
+<div class="donation-card">
+<div class="donation-amount">$25</div>
+<div class="donation-desc">Fund a week of investigation</div>
+<a href="#" class="btn btn-accent">Donate $25</a>
+</div>
+
+<div class="donation-card">
+<div class="donation-amount">$50</div>
+<div class="donation-desc">Support monthly operations</div>
+<a href="#" class="btn btn-accent">Donate $50</a>
+</div>
+
+<div class="donation-card">
+<div class="donation-amount">$100+</div>
+<div class="donation-desc">Sustain long-term independence</div>
+<a href="#" class="btn btn-accent">Donate $100+</a>
+</div>
+</div>
+
+<div class="info-box" style="margin-top:40px;text-align:center;">
+<p style="margin-bottom:0;"><strong>Custom Amount:</strong> Prefer to donate a different amount? Contact us at <strong>support@tasetimedia.org</strong></p>
+</div>
+</section>
+
+<section class="section-block">
+<h2 class="section-title">Why Independence Matters</h2>
+<p>Most media organizations depend on advertising, corporate sponsorship, or institutional grants. These funding sources create invisible editorial pressures:</p>
+<ul>
+<li>Advertisers influence coverage through the threat of withdrawal</li>
+<li>Corporate sponsors expect favorable treatment for their industries</li>
+<li>Government grants come with expectations of political alignment</li>
+<li>Foundation funding often carries ideological strings</li>
+</ul>
+<p><strong>Taseti rejects all of these compromises.</strong> Supporting Taseti is not charity—it is a decision to protect independent thought, preserve historical truth, and ensure that at least one platform exists where analysis is not filtered through the interests of power.</p>
+</section>
+
+<div class="highlight-box">
+<h2 style="margin-top:0;font-size:1.8rem;margin-bottom:20px;">What We Will Not Do</h2>
+<p><strong>We will not:</strong></p>
+<ul>
+<li>Moderate our findings to protect powerful interests</li>
+<li>Accept funding that compromises editorial independence</li>
+<li>Soften historical truths for contemporary sensibilities</li>
+<li>Hide behind false balance when evidence is clear</li>
+<li>Prioritize clicks and engagement over accuracy and depth</li>
+<li>Gatekeep knowledge behind paywalls</li>
+</ul>
+<p style="margin-top:24px;margin-bottom:0;"><strong>Your support makes this possible.</strong> With reader funding, we answer only to truth and our audience—not to advertisers, governments, or institutional donors.</p>
+</div>
+
+<section class="section-block">
+<h2 class="section-title">Other Ways to Support</h2>
+<ul>
+<li><strong>Share Our Work:</strong> Forward articles, post on social media, and recommend Taseti to others who value independent analysis</li>
+<li><strong>Provide Feedback:</strong> Let us know what topics matter to you and what questions need investigation</li>
+<li><strong>Contribute Expertise:</strong> If you have specialized knowledge relevant to our coverage, we welcome collaboration</li>
+<li><strong>Translate Content:</strong> Help make Taseti accessible in multiple languages</li>
+</ul>
+</section>
+
+<div class="info-box" style="margin-top:60px;text-align:center;">
+<p style="font-size:1.3rem;margin-bottom:16px;"><strong>Thank you for supporting independent journalism.</strong></p>
+<p style="margin-bottom:0;">Your contribution ensures that truth, historical memory, and fearless analysis remain accessible to everyone—free from the pressures of power, profit, and political convenience.</p>
+</div>
+
+</div>
+</div></main>
+</body>
+</html>

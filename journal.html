@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti — About Us</title>
+<meta name="description" content="Taseti Media — About Us: Our mission, vision, and commitment to African liberation and truth." />
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0f18;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --soft:#f8fafc;
+    --brand:#101827;
+    --accent:#b91c1c;
+    --max:1200px;
+    --radius:16px;
+    --shadow:0 14px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:ui-serif, Georgia, "Times New Roman", Times, serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50;}
+  .mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap;}
+  .logo{font-family:ui-serif, Georgia, "Times New Roman", Times, serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block;}
+  .logo small{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem;}
+
+  nav{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;flex:1;display:flex;justify-content:center;}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;}
+  nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  nav a:hover{background:var(--soft);text-decoration:none;}
+  .has-submenu{position:relative;}
+  .submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999;}
+  .submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem;}
+  .submenu a:hover{background:var(--soft);text-decoration:none;}
+  header nav .has-submenu:hover > .submenu{display:block;}
+
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap;}
+  .btn-accent{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .btn:hover{text-decoration:none;background:var(--soft);}
+  .btn-accent:hover{filter:brightness(.95);background:var(--brand);}
+
+  /* Hero Section */
+  .hero{
+    background:linear-gradient(135deg, rgba(185,28,28,0.15) 0%, rgba(249,168,212,0.05) 100%), url('https://images.unsplash.com/photo-1557682250-11be2341f77f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VlfHx8fHx8fHwxNjg4OTk4ODky&ixlib=rb-4.0.3&q=80&w=1600') center/cover no-repeat;
+    text-align:center;
+    padding:100px 18px 60px;
+    border-radius:16px;
+    margin-bottom:60px;
+    color:#101827;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .hero h1{font-size:3.5rem;font-weight:900;line-height:1.1;}
+  .hero p{font-size:1.35rem;max-width:800px;margin:20px auto 0;line-height:1.6;}
+
+  main{padding:20px 0 80px;}
+  .content-container{max-width:900px;margin:0 auto;}
+
+  .section-block{margin-bottom:60px;position:relative;}
+  .section-title{font-size:2.2rem;font-weight:900;margin-bottom:28px;color:var(--ink);padding-bottom:12px;border-bottom:3px solid var(--line);}
+  p{margin-bottom:22px;font-size:1.15rem;line-height:1.75;}
+  strong{font-weight:800;color:var(--ink);}
+
+  .highlight-box{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border-left:5px solid #f59e0b;padding:28px 32px;margin:40px 0;border-radius:12px;font-size:1.15rem;line-height:1.75;}
+  .reminder-box{background:linear-gradient(135deg,#fee2e2 0%,#fecaca 100%);border-left:5px solid var(--accent);padding:28px 32px;margin:40px 0;border-radius:12px;font-size:1.1rem;line-height:1.75;}
+  .principle-box{background:var(--soft);border:2px solid var(--line);padding:28px 32px;margin:30px 0;border-radius:12px;font-size:1.1rem;line-height:1.75;}
+  .quote-block{font-style:italic;font-size:1.25rem;color:var(--muted);padding:24px 40px;margin:35px 0;border-left:4px solid var(--accent);background:rgba(185,28,28,0.03);}
+  .divider{height:2px;background:var(--line);margin:50px 0;}
+
+  ul{margin:20px 0 20px 40px;font-size:1.1rem;}
+  li{margin-bottom:12px;line-height:1.7;}
+
+  @media(max-width:768px){
+    .hero h1{font-size:2.4rem;}
+    .hero p{font-size:1.1rem;}
+    .page-title{font-size:2.2rem;}
+    .section-title{font-size:1.8rem;}
+    p{font-size:1.05rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast">
+      <a class="logo" href="mainpage.html">Taseti<small>Media</small></a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li class="has-submenu"><a href="#">Menu</a>
+            <ul class="submenu">
+              <li><a href="africancriminals.html">African Criminals</a></li>
+              <li><a href="resistance.html">African Resistance</a></li>
+              <li><a href="colonialeconomy.html">Colonial Economy</a></li>
+              <li><a href="colonialism.html">Colonialism</a></li>
+              <li><a href="eurasiancriminals.html">European Criminals</a></li>
+              <li><a href="holocausts.html">Holocausts</a></li> 
+              <li><a href="legacy.html">Legacy of Colonization</a></li>
+              <li><a href="modernslavery.html">Modern Slavery</a></li>
+              <li><a href="pan-africanism.html">Pan-Africanism</a></li>
+              <li><a href="religions.html">Religions</a></li>
+              <li><a href="spirituality.html">Spirituality</a></li>
+              <li><a href="whitesupremacy.html">White Supremacy</a></li>
+            </ul>
+          </li>
+          <li><a href="donations.html">Donations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="has-submenu"><a href="journal.html">Journal</a>
+            <ul class="submenu">
+              <li><a href="aboutus.html">About us</a></li>
+              <li><a href="opinion.html">Opinion</a></li>
+              <li><a href="spirituality.html">Spirituality</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="head-actions">
+        <button class="btn btn-accent">French</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <h1>About Taseti Media</h1>
+      <p>A platform for truth, consciousness, and African liberation through knowledge and peaceful resistance</p>
+    </div>
+
+    <div class="content-container">
+
+      <div class="reminder-box">
+        <h2>A Fundamental Reminder</h2>
+        <p>This world was constructed by white supremacists on a foundation of racial hierarchy...</p>
+        <p>Historically, African men and those of African descent have been targeted through violence...</p>
+        <p><strong>Before leading others or giving life, we must first learn to govern ourselves.</strong> Self-control, focus, skill...</p>
+        <p>Self-respect is the baseline of all engagement with the world...</p>
+        <p>Africa existed long before modern borders, colonial divisions, and imposed national identities...</p>
+        <p><strong>Racism is systemic</strong>—embedded in institutions, laws, education, media...</p>
+        <p>Reading, learning, and intellectual development are forms of resistance...</p>
+        <p><strong>Our ancestors endured unimaginable suffering so that you could exist today.</strong> Honoring them requires deliberate action...</p>
+        <p>They have little or no moral values. They do not respect us...</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <section class="section-block">
+        <h2 class="section-title">Who I Am</h2>
+        <p>I am <strong>Warren Yabi</strong>, and I publish analysis and synthesis content...</p>
+        <p>My journey took me from France, where I spent twenty years...</p>
+        <p>Faced with this dead end, I almost fell...</p>
+        <div class="quote-block">"I have chosen a third path: peaceful resistance through knowledge."</div>
+        <p>Having lived in both countries, I can say without ambiguity...</p>
+        <p>Throughout my life, I have been surrounded by people of all backgrounds...</p>
+        <p>I am not alone in this situation...</p>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Our Mission</h2>
+        <p>I am against all forms of discrimination and violence...</p>
+        <div class="principle-box">
+          <p><strong>Taseti Media exists to:</strong> document historical truth, expose ongoing neocolonialism...</p>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">What We Denounce</h2>
+        <p><strong>Neocolonialism in all its forms</strong>—economic, monetary, military, cultural...</p>
+        <p><strong>African dictators, heads of state, and political and military elites</strong>...</p>
+        <p><strong>Corporations, financial institutions, and foreign powers</strong>...</p>
+        <p><strong>All those who participated in crimes against humanity</strong>...</p>
+        <div class="highlight-box">
+          <p>We denounce those individuals and entities who hide behind the language of law...</p>
+          <p>This same structure gave birth to the racial hierarchy that continues...</p>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">What We Stand For</h2>
+        <p>I am not here to call Africans to turn against other peoples...</p>
+        <p>I will not let other communities disrespect our ancestors...</p>
+        <div class="principle-box">
+          <p><strong>We stand for:</strong></p>
+          <ul>
+            <li>Truth over comfortable narratives</li>
+            <li>Accountability over historical amnesia</li>
+            <li>African sovereignty and self-determination</li>
+            <li>Economic independence and cooperation</li>
+            <li>Cultural preservation and intellectual development</li>
+            <li>Strategic resistance through knowledge and consciousness</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">On Collective Responsibility and Moving Forward</h2>
+        <p>I don't believe Europeans today should be held personally responsible...</p>
+        <p><strong>To move forward, we need to acknowledge the truth of our shared history...</strong></p>
+        <p>Our personal identities are not our ancestors' actions...</p>
+        <div class="highlight-box">
+          <p><strong>Yet, while we acknowledge this, we must also recognize that systems of power...</strong></p>
+          <p>Western powers, through control of media, education, and international institutions...</p>
+          <p><strong>The injustice is not just historical—it is ongoing, structural, and carefully maintained.</strong></p>
+        </div>
+        <p>Ultimately, the challenge is to face reality honestly...</p>
+        <p><strong>Only by acknowledging history, forgiving where necessary...</strong></p>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section-block">
+        <h2 class="section-title">Join Us</h2>
+        <p>Taseti Media is more than a website—it is a commitment to truth...</p>
+        <p>This is not a call to hatred. This is a call to consciousness...</p>
+        <div class="quote-block">"Our ancestors endured so we could exist. We must build so our descendants can flourish."</div>
+        <p style="font-size:1.25rem;font-weight:700;margin-top:40px;">We rise together, or we do not rise at all.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti Media — Independent African Analysis</title>
+<meta name="description" content="Taseti Media — Independent analysis exposing colonial legacies, neocolonial systems, and charting the path to African liberation." />
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0f18;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --soft:#f8fafc;
+    --brand:#101827;
+    --accent:#b91c1c;
+    --max:1200px;
+    --radius:16px;
+    --shadow:0 14px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:ui-serif, Georgia, "Times New Roman", Times, serif;color:var(--ink);background:var(--bg);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50;}
+  .mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap;}
+  .logo{font-family:ui-serif, Georgia, "Times New Roman", Times, serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block;}
+  .logo small{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem;}
+
+  nav{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;flex:1;display:flex;justify-content:center;}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+  nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  nav a:hover{background:var(--soft);text-decoration:none;}
+  .has-submenu{position:relative;}
+  .submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999;}
+  .submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem;}
+  .submenu a:hover{background:var(--soft);text-decoration:none;}
+  header nav .has-submenu:hover > .submenu{display:block;}
+
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.9rem;}
+  .btn-accent{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .btn:hover{text-decoration:none;background:var(--soft);}
+  .btn-accent:hover{filter:brightness(.95);background:var(--brand);}
+
+  main{padding:0 0 80px;}
+
+  /* Hero Section */
+  .hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+    background:linear-gradient(135deg,#101827,#b91c1c);
+    color:#fff;
+    margin-bottom:60px;
+  }
+  .hero-content{max-width:900px;}
+  .hero h1{
+    font-size:2.8rem;
+    margin-bottom:24px;
+    line-height:1.15;
+    font-weight:900;
+  }
+  .hero p{
+    font-size:1.2rem;
+    margin-bottom:24px;
+    line-height:1.65;
+  }
+  .hero p:last-of-type{margin-bottom:32px;}
+
+  /* Section titles */
+  .section-header{
+    text-align:center;
+    margin-bottom:50px;
+  }
+  .section-header h2{
+    font-size:2.4rem;
+    font-weight:900;
+    margin-bottom:12px;
+  }
+  .section-header p{
+    font-size:1.15rem;
+    color:var(--muted);
+    max-width:700px;
+    margin:0 auto;
+  }
+
+  /* Articles grid */
+  .articles-section{
+    padding:60px 0;
+  }
+  .articles-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 18px;
+  }
+  .article-card{
+    background:var(--soft);
+    border-radius:16px;
+    padding:28px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border-top:4px solid var(--accent);
+  }
+  .article-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+  }
+  .article-card h3{
+    font-size:1.5rem;
+    margin-bottom:14px;
+    font-weight:900;
+  }
+  .article-card p{
+    font-size:1.05rem;
+    color:var(--ink);
+    flex-grow:1;
+    line-height:1.7;
+    margin-bottom:20px;
+  }
+
+  /* Manifesto section */
+  .manifesto-section{
+    background:#fef2f2;
+    padding:60px 20px;
+    margin:60px 0;
+  }
+  .manifesto-content{
+    max-width:800px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .manifesto-content h2{
+    font-size:2.2rem;
+    font-weight:900;
+    margin-bottom:24px;
+  }
+  .manifesto-content p{
+    font-size:1.15rem;
+    line-height:1.75;
+    margin-bottom:20px;
+  }
+
+  @media (max-width:768px){
+    .hero h1{font-size:2rem;}
+    .hero p{font-size:1.05rem;}
+    .section-header h2{font-size:1.9rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast">
+      <a class="logo" href="mainpage.html">Taseti<small>Media</small></a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li class="has-submenu">
+            <a href="#">Menu</a>
+            <ul class="submenu">
+              <li><a href="africancriminals.html">African Criminals</a></li>
+              <li><a href="africanresistance.html">African Resistance</a></li>
+              <li><a href="colonialeconomy.html">Colonial Economy</a></li>
+              <li><a href="colonialism.html">Colonialism</a></li>
+              <li><a href="europeancriminals.html">European Criminals</a></li>
+              <li><a href="holocausts.html">Holocausts</a></li> 
+              <li><a href="legacyofcolonization.html">Legacy of Colonization</a></li>
+              <li><a href="modernslavery.html">Modern Slavery</a></li>
+              <li><a href="pan-africanism.html">Pan-Africanism</a></li>
+              <li><a href="religions.html">Religions</a></li>
+              <li><a href="spirituality.html">Spirituality</a></li>
+              <li><a href="whitesupremacy.html">White Supremacy</a></li>
+            </ul>
+          </li>
+          <li><a href="donations.html">Donations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="has-submenu">
+            <a href="#">Journal</a>
+            <ul class="submenu">
+              <li><a href="aboutus.html">About us</a></li>
+              <li><a href="opinion.html">Opinion</a></li>
+              <li><a href="spirituality.html">Spirituality</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="head-actions">
+        <button id="translate-btn" class="btn btn-accent">French</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Taseti Media: Independent African Analysis</h1>
+      <p>Taseti is an independent media outlet born from a simple observation: Africa does not lack intelligence, resources, or history. What it lacks are clear, demanding, and strategic spaces to think about its future beyond imposed narratives.</p>
+      
+      <p>This space is not religious but spiritual, political, and conscious. Africa was one of the founding pillars of human thought long before history was confiscated, rewritten, and whitewashed.</p>
+      
+      <p><strong>The objective is to put an end to domination, predation, and hypocrisy.</strong> Colonialism has not disappeared—it has changed form. It persists through debt, extraction, technological dependence, media narratives, and social fragmentation.</p>
+      
+      <a class="btn btn-accent" href="aboutus.html" style="margin-top:10px;">Read Our Full Charter</a>
+    </div>
+  </section>
+
+  <div class="section-header">
+    <h2>Essential Reading</h2>
+    <p>Exposing colonial legacies, neocolonial systems, and charting the path to true African liberation</p>
+  </div>
+
+  <section class="articles-section">
+    <div class="articles-grid">
+      
+      <article class="article-card">
+        <h3>White Supremacy</h3>
+        <p>The global system designed to oppress, exploit, and erase Black and African people. Understanding how it was constructed, how it operates, and how it systematically targets Black people worldwide.</p>
+        <a href="whitesupremacy.html" class="btn btn-accent">Read Analysis</a>
+      </article>
+
+      <article class="article-card">
+        <h3>Colonialism</h3>
+        <p>The complete history of European invasion, exploitation, and African resistance from the 15th to 20th centuries. From the transatlantic slave trade through the Scramble for Africa to independence struggles.</p>
+        <a href="colonialism.html" class="btn btn-accent">Read History</a>
+      </article>
+
+      <article class="article-card">
+        <h3>Pan-Africanism</h3>
+        <p>From colonial violence through incomplete independence to Pan-African unity as the path to genuine African sovereignty. The philosophy, history, and strategy for true liberation.</p>
+        <a href="pan-africanism.html" class="btn btn-accent">Read Manifesto</a>
+      </article>
+
+      <article class="article-card">
+        <h3>African Holocausts</h3>
+        <p>From the transatlantic slave trade to the Congo genocide, documenting the mass killing of hundreds of millions of Africans through slavery, colonization, and systematic murder.</p>
+        <a href="holocausts.html" class="btn btn-accent">Read Documentation</a>
+      </article>
+
+      <article class="article-card">
+        <h3>Legacy of Colonization</h3>
+        <p>Africa's present is deeply shaped by colonial legacies—borders drawn by outsiders, economies built for export, institutions designed for control, and psychological warfare continuing today.</p>
+        <a href="legacy.html" class="btn btn-accent">Read Analysis</a>
+      </article>
+
+      <article class="article-card">
+        <h3>Colonial Economy</h3>
+        <p>How European powers built extraction economies designed to enrich colonizers while impoverishing Africa. From forced cash crops to resource theft, understanding the economic foundations of continued exploitation.</p>
+        <a href="colonialeconomy.html" class="btn btn-accent">Read Analysis</a>
+      </article>
+
+      <article class="article-card">
+        <h3>Modern Slavery</h3>
+        <p>Slavery did not end with abolition—it evolved. From prison labor to debt bondage, from migrant exploitation to economic coercion, modern slavery continues extracting African labor and wealth.</p>
+        <a href="modernslavery.html" class="btn btn-accent">Expose Reality</a>
+      </article>
+
+      <article class="article-card">
+        <h3>African Resistance</h3>
+        <p>Stories of those who challenged colonial systems throughout history. From Shaka Zulu to Yaa Asantewaa, from Nkrumah to Sankara—African resistance was constant, strategic, and powerful.</p>
+        <a href="africanresistance.html" class="btn btn-accent">Read Stories</a>
+      </article>
+
+      <article class="article-card">
+        <h3>European Criminals</h3>
+        <p>Leopold II, Cecil Rhodes, Henry Morton Stanley, and countless others who orchestrated genocide, theft, and systematic exploitation. Documenting the criminals who built empires on African blood.</p>
+        <a href="eurasiancriminals.html" class="btn btn-accent">See Records</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="manifesto-section">
+    <div class="manifesto-content">
+      <h2>2026: The End of Automatic Obedience</h2>
+      <p>For centuries, Africa has been expected to follow rules it did not write, adopt models it did not choose, and obey directives framed as unavoidable. In 2026, this automatic submission begins to collapse.</p>
+      <p>A generation that is informed, connected, and disillusioned has identified the truth: <strong>dependency is not destiny. It is a system. And systems can be dismantled once they are exposed.</strong></p>
+      <p style="margin-bottom:0;"><strong>Africa is not at war with the world. Africa is at war with submission.</strong></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  const translateBtn = document.getElementById("translate-btn");
+  translateBtn.addEventListener("click", () => {
+    const frame = document.querySelector("iframe.goog-te-menu-frame");
+    if (!frame) {
+      alert("Translation menu not loaded yet. Please refresh the page.");
+      return;
+    }
+    const doc = frame.contentDocument || frame.contentWindow.document;
+    const frenchOption = [...doc.querySelectorAll('span')].find(s => s.textContent.trim() === "French");
+    if (frenchOption) frenchOption.click();
+  });
+</script>
+
+</body>
+</html>

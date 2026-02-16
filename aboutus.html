@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti — About Us</title>
+<meta name="description" content="Taseti Media — About Us: Our mission, vision, and commitment to African liberation and truth." />
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0f18;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --soft:#f8fafc;
+    --brand:#101827;
+    --accent:#b91c1c;
+    --max:1200px;
+    --radius:16px;
+    --shadow:0 14px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:ui-serif, Georgia, "Times New Roman", Times, serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+  .sr-only{position:absolute;left:-9999px;}
+
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50;}
+  .mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap;}
+  .logo{font-family:ui-serif, Georgia, "Times New Roman", Times, serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block;}
+  .logo small{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem;}
+
+  nav{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;flex:1;display:flex;justify-content:center;}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;}
+  nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  nav a:hover{background:var(--soft);text-decoration:none;}
+  .has-submenu{position:relative;}
+  .submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999;}
+  .submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem;}
+  .submenu a:hover{background:var(--soft);text-decoration:none;}
+  header nav .has-submenu:hover > .submenu{display:block;}
+
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap;}
+  .btn-accent{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .btn:hover{text-decoration:none;background:var(--soft);}
+  .btn-accent:hover{filter:brightness(.95);background:var(--brand);}
+
+  main{padding:40px 0 80px;}
+  
+  .content-container{max-width:900px;margin:0 auto;}
+  
+  .page-header{
+    text-align:center;
+    margin-bottom:50px;
+  }
+  
+  .page-title{
+    font-size:3rem;
+    font-weight:900;
+    margin-bottom:16px;
+    color:var(--ink);
+    line-height:1.1;
+  }
+  
+  .page-subtitle{
+    font-size:1.35rem;
+    color:var(--muted);
+    font-weight:400;
+    line-height:1.5;
+  }
+
+  .section-block{
+    margin-bottom:60px;
+  }
+
+  .section-title{
+    font-size:2.2rem;
+    font-weight:900;
+    margin-bottom:28px;
+    color:var(--ink);
+    padding-bottom:12px;
+    border-bottom:3px solid var(--line);
+  }
+
+  p{
+    margin-bottom:22px;
+    font-size:1.15rem;
+    line-height:1.75;
+  }
+
+  strong{
+    font-weight:800;
+    color:var(--ink);
+  }
+
+  .highlight-box{
+    background:linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-left:5px solid #f59e0b;
+    padding:28px 32px;
+    margin:40px 0;
+    border-radius:12px;
+    font-size:1.15rem;
+    line-height:1.75;
+  }
+
+  .reminder-box{
+    background:linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border-left:5px solid var(--accent);
+    padding:28px 32px;
+    margin:40px 0;
+    border-radius:12px;
+    font-size:1.1rem;
+    line-height:1.75;
+  }
+
+  .principle-box{
+    background:var(--soft);
+    border:2px solid var(--line);
+    padding:28px 32px;
+    margin:30px 0;
+    border-radius:12px;
+    font-size:1.1rem;
+    line-height:1.75;
+  }
+
+  .quote-block{
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--muted);
+    padding:24px 40px;
+    margin:35px 0;
+    border-left:4px solid var(--accent);
+    background:rgba(185, 28, 28, 0.03);
+  }
+
+  .divider{
+    height:2px;
+    background:var(--line);
+    margin:50px 0;
+  }
+
+  ul{
+    margin:20px 0 20px 40px;
+    font-size:1.1rem;
+  }
+
+  li{
+    margin-bottom:12px;
+    line-height:1.7;
+  }
+
+  @media (max-width:768px){
+    .page-title{font-size:2.2rem;}
+    .page-subtitle{font-size:1.15rem;}
+    .section-title{font-size:1.8rem;}
+    p{font-size:1.05rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+  <div class="mast">
+    <a class="logo" href="mainpage.html">Taseti<small>Media</small></a>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li class="has-submenu">
+          <a href="">Menu</a>
+          <ul class="submenu">
+            <li><a href="africancriminals.html">African Criminals</a></li>
+            <li><a href="resistance.html">African Resistance</a></li>
+            <li><a href="colonialeconomy.html">Colonial Economy</a></li>
+            <li><a href="colonialism.html">Colonialism</a></li>
+            <li><a href="europeancriminals.html">European Criminals</a></li>
+            <li><a href="holocausts.html">Holocausts</a></li> 
+            <li><a href="legacyofcolonization.html">Legacy of Colonization</a></li>
+            <li><a href="modernslavery.html">Modern Slavery</a></li>
+            <li><a href="pan-africanism.html">Pan-Africanism</a></li>
+            <li><a href="religions.html">Religions</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+            <li><a href="whitesupremacy.html">White Supremacy</a></li>
+          </ul>
+        </li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="has-submenu">
+          <a href="">Journal</a>
+          <ul class="submenu">
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="opinion.html">Opinion</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <button id="translate-btn" class="btn btn-accent">French</button>
+    </div>
+  </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="content-container">
+      
+      <div class="page-header">
+        <h1 class="page-title">About Taseti Media</h1>
+        <p class="page-subtitle">A platform for truth, consciousness, and African liberation through knowledge and peaceful resistance</p>
+      </div>
+
+      <div class="reminder-box">
+        <h2 style="margin-top:0;font-size:1.8rem;margin-bottom:20px;">A Fundamental Reminder</h2>
+        
+        <p>This world was constructed by white supremacists on a foundation of racial hierarchy. That system continues to function on the same foundation today, perpetuating inequality and limiting our flourishing. Struggling within these systems is not a reflection of intelligence, effort, or moral character—it is a reflection of structures built to benefit others at our expense.</p>
+        
+        <p>Historically, African men and those of African descent have been targeted through violence, criminalization, and psychological oppression. Lynching, castration, imprisonment, and systemic erasure were not random acts—they were deliberate strategies to break leadership, autonomy, and resilience. The fear, confusion, and trauma many carry today are inherited, not self-inflicted. Surrendering our growth to circumstance is not an option.</p>
+        
+        <p><strong>Before leading others or giving life, we must first learn to govern ourselves.</strong> Self-control, focus, skill, and knowledge must take precedence over distraction, desire, and external validation. Sex is not liberation. Consumption is not freedom. Stop measuring your worth through media validation or the behavior of women. The Black woman is not the Black man's problem. Black men and white women are the issues—both will seek stability instead of freedom.</p>
+        
+        <p>Self-respect is the baseline of all engagement with the world. If you cannot respect yourself, no system or authority will respect you. Conditional respect from a system is fleeting and can be withdrawn at any moment.</p>
+        
+        <p>Africa existed long before modern borders, colonial divisions, and imposed national identities. The "Middle East" was also part of Africa, inhabited by dark-skinned Africans. Europe and Asia form one continent: Eurasia. Displacement and fragmentation were deliberate tools to erase memory, identity, and unity. Prior to colonization, African societies were structured, independent, and complex—evidenced by the cultural and linguistic diversity that persists today.</p>
+        
+        <p><strong>Racism is systemic</strong>—embedded in institutions, laws, education, media, and data collection. It was designed in a context where we, dark-skinned people, were exploitable and disposable. Its most effective weapon is division among the oppressed. Economic cooperation, knowledge sharing, and collective advancement are survival strategies, not abstract ideals.</p>
+        
+        <p>Reading, learning, and intellectual development are forms of resistance. Passivity and entertainment-driven habits serve only the interests of those who profit from oppression. You are not a machine, a statistic, or disposable. Daily evolution—mental, emotional, and strategic—is expected. Challenges are inevitable; the system benefits when individuals give up. Understanding power does not make one paranoid—it makes one prepared. Anger without discipline is wasted energy. Pain without direction becomes self-destruction.</p>
+        
+        <p><strong>Our ancestors endured unimaginable suffering so that you could exist today.</strong> Honoring them requires deliberate action, focus, strategy, and growth. Much of the oppression we face is perpetuated by individuals and institutions hiding behind laws to protect their self-interest. These actors do not represent the people—they represent corporations and structures they inherited, maintaining systems explicitly built on racism, exploitation, and control.</p>
+        
+        <p>They have little or no moral values. They do not respect us. Their tolerance is conditional and calculated. They do not seek collective good; they seek to extract value, maintain hierarchy, and ensure that the system continues to benefit them at our expense. Recognizing their motives and the framework they enforce is essential for survival, strategic thinking, and eventual liberation.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <section class="section-block">
+        <h2 class="section-title">Who I Am</h2>
+        
+   <div class="content-container">
+  <p><strong>I am Warren Yabi</strong>, a writer and analyst focused on power dynamics, political economy, and the modern mechanisms that perpetuate structures inherited from colonialism and slavery. My work examines how historical systems of domination evolve rather than disappear, reshaping themselves within contemporary institutions.</p>
+
+  <p>My journey has taken me across Europe — twenty years in France, followed by a decade in England. With a law degree in hand, I entered adulthood already aware that the path ahead would not be neutral. At university, it became clear that lecturers were not there to guide us beyond the limits of the system itself. Education provided knowledge, but not access.</p>
+
+  <p>When I stepped into the professional world, I knocked on its doors with determination. Interviews were scarce. Opportunities were scarce. Results were almost nonexistent. I will not name what blocks those doors. The pattern speaks for itself.</p>
+
+  <p>There was a moment when I nearly fell — when frustration, humiliation, and exclusion could have pushed me toward destructive choices. But I refused to surrender my humanity to a system that denies it. I came to understand something essential: rebellion through crime is not liberation. It is a trap. A counterfeit freedom designed to consume the very people it claims to empower.</p>
+
+  <p>Crime does not dismantle oppression; it reinforces it. It transforms the wounded into instruments of their own destruction. Worse still, it risks turning you into the very reflection of those who once oppressed your ancestors.</p>
+
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Our Mission</h2>
+        
+        <p>I am against all forms of discrimination and violence. But I will never accept silence in the face of oppression. This site is my contribution to awakening consciousness, preserving our collective memory, and building a future where human dignity is no longer negotiable.</p>
+        
+        <div class="principle-box">
+          <p style="margin-bottom:0;"><strong>Taseti Media exists to:</strong> document historical truth, expose ongoing neocolonialism, amplify African voices and perspectives, preserve collective memory against erasure, and build consciousness for liberation.</p>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">What We Denounce</h2>
+        
+        <p><strong>Neocolonialism in all its forms</strong>—economic, monetary, military, cultural—that keeps Africa in organized dependence for the profit of others.</p>
+        
+        <p><strong>African dictators, heads of state, and political and military elites</strong> who sold their people for power, protection, or personal enrichment.</p>
+        
+        <p><strong>Corporations, financial institutions, and foreign powers</strong> that built their prosperity on the plundering of African resources.</p>
+        
+        <p><strong>All those who participated in crimes against humanity</strong>—imposed wars, orchestrated famines, and inflicted psychological and social destruction on African peoples.</p>
+        
+        <div class="highlight-box">
+          <p>We denounce those individuals and entities who hide behind the language of law to shield criminal and extractive practices. They do not represent the people they claim to govern; they represent a corporate structure that was constructed centuries ago to consolidate power, protect privilege, and extract value.</p>
+          
+          <p>This same structure gave birth to the racial hierarchy that continues to shape the modern world. Its legal systems were never designed to deliver justice universally, but to legitimize exploitation while maintaining the appearance of order. <strong>The persistence of racism within today's institutions is not a failure of the system—it is evidence that the system is functioning as intended.</strong></p>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">What We Stand For</h2>
+        
+        <p>I am not here to call Africans to turn against other peoples. I am here to say one simple thing: <strong>we must rise so that no one can disrespect us ever again</strong>—in the media, in institutions, or in the global economy.</p>
+        
+        <p>I will not let other communities disrespect our ancestors. The systematic targeting of Africans worldwide must stop. I reject the excuse of ignorance. I reject the excuse of neutrality. <strong>Silence today is complicity.</strong></p>
+        
+        <div class="principle-box">
+          <p><strong>We stand for:</strong></p>
+          <ul style="margin-top:16px;">
+            <li>Truth over comfortable narratives</li>
+            <li>Accountability over historical amnesia</li>
+            <li>African sovereignty and self-determination</li>
+            <li>Economic independence and cooperation</li>
+            <li>Cultural preservation and intellectual development</li>
+            <li>Strategic resistance through knowledge and consciousness</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">On Collective Responsibility and Moving Forward</h2>
+        
+        <p>I don't believe Europeans today should be held personally responsible as a whole for the actions of their ancestors. History is complex, and the people alive now did not create the systems that existed centuries ago. At the same time, we cannot ignore the fact that Black people have suffered for generations under systems built on slavery and colonization, and in many ways, they continue to suffer today. These injustices left deep scars—social, economic, and cultural—that still shape the world.</p>
+        
+        <p><strong>To move forward, we need to acknowledge the truth of our shared history without assigning inherited guilt.</strong> We must come to a point where we can forgive: forgive the ancestors of whites for the crimes they committed, and forgive the ancestors of Blacks for the times they were unable to resist or fight back. This is not about blame—it is about understanding, acceptance, and the courage to break cycles of resentment that trap us in the past.</p>
+        
+        <p>Our personal identities are not our ancestors' actions, and we must recognize that our lives today are not the fault of anyone who came before us.</p>
+        
+        <div class="highlight-box">
+          <p><strong>Yet, while we acknowledge this, we must also recognize that systems of power have persisted in ways that continue to harm Africans worldwide.</strong></p>
+          
+          <p>Western powers, through control of media, education, and international institutions, often perpetuate narratives that benefit themselves while marginalizing African voices. These narratives can make it seem as though African nations or communities are inherently backward, corrupt, or in need of "saving," while ignoring centuries of exploitation, resource theft, and political interference.</p>
+          
+          <p><strong>The injustice is not just historical—it is ongoing, structural, and carefully maintained.</strong></p>
+        </div>
+        
+        <p>Ultimately, the challenge is to face reality honestly. We must accept the legacy of the past without letting it dictate endless cycles of blame. We must recognize the systems that continue to disadvantage some while benefiting others, and we must speak truthfully about power and inequality.</p>
+        
+        <p><strong>Only by acknowledging history, forgiving where necessary, and critically analyzing the structures of today can we hope to create a more just and equitable world</strong>—one where people are judged by their actions today, not the sins of their ancestors.</p>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section-block">
+        <h2 class="section-title">Join Us</h2>
+        
+        <p>Taseti Media is more than a website—it is a commitment to truth, memory, and liberation. We welcome all who seek understanding, who refuse comfortable lies, and who believe that knowledge is power.</p>
+        
+        <p>This is not a call to hatred. This is a call to consciousness. This is a call to strategic action. This is a call to honor our ancestors by becoming the people they dreamed we could be.</p>
+        
+        <div class="quote-block">
+          "Our ancestors endured so we could exist. We must build so our descendants can flourish."
+        </div>
+        
+        <p style="font-size:1.25rem;font-weight:700;margin-top:40px;">We rise together, or we do not rise at all.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  // Trigger Google Translate when button clicked
+  const translateBtn = document.getElementById("translate-btn");
+  translateBtn.addEventListener("click", () => {
+    const frame = document.querySelector("iframe.goog-te-menu-frame");
+    if (!frame) {
+      alert("Translation menu not loaded yet. Please refresh the page.");
+      return;
+    }
+    const doc = frame.contentDocument || frame.contentWindow.document;
+    const frenchOption = [...doc.querySelectorAll('span')].find(s => s.textContent.trim() === "French");
+    if (frenchOption) frenchOption.click();
+  });
+</script>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taseti — Gallery of African Liberation</title>
+<meta name="description" content="Taseti Media — Gallery: Honoring leaders, scholars, and revolutionaries in African liberation and consciousness." />
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0f18;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --soft:#f8fafc;
+    --brand:#101827;
+    --accent:#b91c1c;
+    --max:1200px;
+    --radius:16px;
+    --shadow:0 14px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:ui-serif, Georgia, "Times New Roman", Times, serif;color:var(--ink);background:var(--bg);line-height:1.55;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px;}
+  .sr-only{position:absolute;left:-9999px;}
+
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);position:sticky;top:0;z-index:50;}
+  .mast{display:flex;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap;}
+  .logo{font-family:ui-serif, Georgia, "Times New Roman", Times, serif;letter-spacing:.08em;font-weight:900;font-size:1.45rem;text-transform:uppercase;line-height:1;display:inline-block;}
+  .logo small{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;text-transform:none;letter-spacing:0;font-weight:600;color:var(--muted);margin-top:6px;font-size:.85rem;}
+
+  nav{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;flex:1;display:flex;justify-content:center;}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;}
+  nav a{font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  nav a:hover{background:var(--soft);text-decoration:none;}
+  .has-submenu{position:relative;}
+  .submenu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;list-style:none;margin:0;box-shadow:var(--shadow);z-index:999;}
+  .submenu a{display:block;padding:10px 12px;border-radius:12px;font-weight:800;font-size:.92rem;}
+  .submenu a:hover{background:var(--soft);text-decoration:none;}
+  header nav .has-submenu:hover > .submenu{display:block;}
+
+  .head-actions{display:flex;align-items:center;gap:10px;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap;}
+  .btn-accent{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .btn:hover{text-decoration:none;background:var(--soft);}
+  .btn-accent:hover{filter:brightness(.95);background:var(--brand);}
+
+  main{padding:40px 0 80px;}
+  
+  .page-header{
+    text-align:center;
+    margin-bottom:50px;
+  }
+  
+  .page-title{
+    font-size:2.8rem;
+    font-weight:900;
+    margin-bottom:12px;
+    color:var(--ink);
+  }
+  
+  .page-subtitle{
+    font-size:1.2rem;
+    color:var(--muted);
+    font-weight:400;
+  }
+
+  .category-section{
+    margin-bottom:70px;
+  }
+
+  .category-title{
+    font-size:2rem;
+    font-weight:900;
+    margin-bottom:30px;
+    padding-bottom:12px;
+    border-bottom:3px solid var(--line);
+    color:var(--ink);
+  }
+
+  .people-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:32px;
+    margin-bottom:50px;
+  }
+
+  .person{
+    margin:0;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:all 0.3s ease;
+    box-shadow:0 1px 3px rgba(0,0,0,.05);
+  }
+
+  .person:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+  }
+
+  .person img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+  }
+
+  figcaption{
+    padding:18px;
+  }
+
+  .person-name{
+    font-size:1.3rem;
+    font-weight:900;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+
+  .person-dates{
+    font-size:0.9rem;
+    color:var(--muted);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+
+  .person-description{
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--ink);
+  }
+
+  @media (max-width:768px){
+    .page-title{font-size:2rem;}
+    .category-title{font-size:1.6rem;}
+    .people-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+  <div class="mast">
+    <a class="logo" href="mainpage.html">Taseti<small>Media</small></a>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li class="has-submenu">
+          <a href="">Menu</a>
+          <ul class="submenu">
+            <li><a href="africancriminals.html">African Criminals</a></li>
+            <li><a href="africanresistance.html">African Resistance</a></li>
+            <li><a href="colonialeconomy.html">Colonial Economy</a></li>
+            <li><a href="colonialism.html">Colonialism</a></li>
+            <li><a href="eurasiancriminals.html">European Criminals</a></li>
+            <li><a href="forgotten-aspects.html">Forgotten Aspects</a></li>
+            <li><a href="holocausts.html">Holocausts</a></li> 
+            <li><a href="legacy.html">Legacy of Colonization</a></li>
+            <li><a href="modernslavery.html">Modern Slavery</a></li>
+            <li><a href="pan-africanism.html">Pan-Africanism</a></li>
+            <li><a href="post-independence.html">Post-Independence Impact</a></li>
+            <li><a href="religions.html">Religions</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+            <li><a href="whitesupremacy.html">White Supremacy</a></li>
+          </ul>
+        </li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="has-submenu">
+          <a href="journal.html">Journal</a>
+          <ul class="submenu">
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="factsopinions.html">Facts & Opinions</a></li>
+            <li><a href="spirituality.html">Spirituality</a></li>
+            <li><a href="stories.html">Stories</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <button id="translate-btn" class="btn btn-accent">French</button>
+    </div>
+  </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-header">
+      <h1 class="page-title">Gallery of African Liberation</h1>
+      <p class="page-subtitle">Honoring the leaders, scholars, and revolutionaries who fought for African freedom and consciousness</p>
+    </div>
+
+    <section class="category-section">
+      <h2 class="category-title">Revolutionary Leaders & Pan-Africanists</h2>
+      <div class="people-grid">
+        
+        <figure class="person">
+          <img src="Malcolmx.jpg" alt="Malcolm X">
+          <figcaption>
+            <div class="person-name">Malcolm X</div>
+            <div class="person-dates">1925–1965</div>
+            <p class="person-description">Revolutionary leader, human rights activist, and advocate for Black liberation. Transformed from Nation of Islam minister to Pan-Africanist internationalist. Assassinated for his uncompromising stance on Black self-determination and global solidarity with African peoples.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="KN.jpg" alt="Kwame Nkrumah">
+          <figcaption>
+            <div class="person-name">Kwame Nkrumah</div>
+            <div class="person-dates">1909–1972</div>
+            <p class="person-description">First President of Ghana and founding father of Pan-Africanism. Led Ghana to independence in 1957, inspiring liberation movements across Africa. Advocated for African unity, economic independence, and neo-colonialism awareness. Overthrown in CIA-backed coup in 1966.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="PL.jpg" alt="Patrice Lumumba">
+          <figcaption>
+            <div class="person-name">Patrice Lumumba</div>
+            <div class="person-dates">1925–1961</div>
+            <p class="person-description">First democratically elected Prime Minister of the Democratic Republic of Congo. Champion of African independence and anti-imperialism. Assassinated in 1961 with complicity of Belgian and U.S. intelligence for refusing to allow continued Western control of Congo's resources.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="Ts.jpg" alt="Thomas Sankara">
+          <figcaption>
+            <div class="person-name">Thomas Sankara</div>
+            <div class="person-dates">1949–1987</div>
+            <p class="person-description">Revolutionary President of Burkina Faso (1983–1987). Implemented radical anti-imperialist and feminist policies, renamed Upper Volta to Burkina Faso ("Land of Upright People"), fought corruption, promoted self-sufficiency. Assassinated in French-backed coup led by Blaise Compaoré.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="RM.jpg" alt="Robert Mugabe">
+          <figcaption>
+            <div class="person-name">Robert Mugabe</div>
+            <div class="person-dates">1924–2019</div>
+            <p class="person-description">Led Zimbabwe's liberation struggle against white minority rule. First Prime Minister (1980–1987) and President (1987–2017) of independent Zimbabwe. Implemented land reform reclaiming land from white settlers. Complex legacy of liberation hero and authoritarian ruler.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="RN.jpg" alt="Ruben Um Nyobe">
+          <figcaption>
+            <div class="person-name">Ruben Um Nyobe</div>
+            <div class="person-dates">1913–1958</div>
+            <p class="person-description">Founder and leader of the Union des Populations du Cameroun (UPC). Led Cameroon's independence movement against French colonial rule. Advocated for immediate independence and reunification of British and French Cameroons. Assassinated by French colonial forces in 1958.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2 class="category-title">Contemporary African Leaders</h2>
+      <div class="people-grid">
+
+        <figure class="person">
+          <img src="IT1.jpg" alt="Ibrahim Traoré">
+          <figcaption>
+            <div class="person-name">Ibrahim Traoré</div>
+            <div class="person-dates">1988–Present</div>
+            <p class="person-description">President of Burkina Faso since 2022. Military officer who led coup against transitional government. Continues Sankara's legacy of sovereignty and anti-imperialism. Expelled French troops, strengthened ties with Russia, prioritized national security and economic independence.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="AG1.jpg" alt="Assimi Goïta">
+          <figcaption>
+            <div class="person-name">Assimi Goïta</div>
+            <div class="person-dates">1983–Present</div>
+            <p class="person-description">President of Mali since 2021. Led military coups in 2020 and 2021 against governments perceived as ineffective against jihadist insurgency. Expelled French forces, formed alliance with Burkina Faso and Niger. Advocates for African solutions to African problems.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="AT.jpg" alt="Abdourahamane Tiani">
+          <figcaption>
+            <div class="person-name">Abdourahamane Tiani</div>
+            <div class="person-dates">1972–Present</div>
+            <p class="person-description">President of Niger since 2023 military coup. Former Presidential Guard commander who overthrew President Mohamed Bazoum. Part of Sahel military alliance with Mali and Burkina Faso. Expelled French military presence and reasserted national sovereignty.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="JM.jpg" alt="Julius Malema">
+          <figcaption>
+            <div class="person-name">Julius Malema</div>
+            <div class="person-dates">1981–Present</div>
+            <p class="person-description">South African politician and leader of the Economic Freedom Fighters (EFF). Advocates for land expropriation without compensation, nationalization of mines and banks, and Pan-African unity. Outspoken critic of neocolonialism and Western imperialism in Africa.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="ks1.jpg" alt="Kemi Seba">
+          <figcaption>
+            <div class="person-name">Kemi Seba</div>
+            <div class="person-dates">1981–Present</div>
+            <p class="person-description">Pan-Africanist activist, author, and leader fighting against French neocolonialism in Africa. Founded multiple movements advocating for African sovereignty, economic independence, and rejection of the CFA franc. Banned from several African countries under French pressure.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="NY.jpg" alt="Nathalie Yamb">
+          <figcaption>
+            <div class="person-name">Nathalie Yamb</div>
+            <div class="person-dates">1969–Present</div>
+            <p class="person-description">Swiss-Cameroonian Pan-Africanist activist and political advisor. Outspoken critic of French neocolonialism and the CFA franc system. Expelled from Ivory Coast in 2019 for activism. Advises African governments on sovereignty and economic independence.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2 class="category-title">Scholars & Historians of African Consciousness</h2>
+      <div class="people-grid">
+
+        <figure class="person">
+          <img src="JHC.jpg" alt="John Henrik Clarke">
+          <figcaption>
+            <div class="person-name">John Henrik Clarke</div>
+            <div class="person-dates">1915–1998</div>
+            <p class="person-description">Pioneer historian of African and African-American history. Founded the Black Studies movement in U.S. universities. Authored numerous works restoring African contributions to world civilization. Taught that African history is world history and demanded intellectual sovereignty.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="CAD.jpg" alt="Cheikh Anta Diop">
+          <figcaption>
+            <div class="person-name">Cheikh Anta Diop</div>
+            <div class="person-dates">1923–1986</div>
+            <p class="person-description">Senegalese historian, anthropologist, and physicist. Proved through scientific evidence that ancient Egypt was a Black African civilization. His work challenged Eurocentric historical narratives and restored African contributions to world civilization. Founded radiocarbon dating laboratory in Dakar.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="ybj.jpg" alt="Yosef Ben-Jochannan">
+          <figcaption>
+            <div class="person-name">Yosef Ben-Jochannan</div>
+            <div class="person-dates">1918–2015</div>
+            <p class="person-description">Historian, author, and Egyptologist. Known as "Dr. Ben," he taught African history for over 50 years. Authored works proving African origins of major religions and Western philosophy. Challenged academic racism and demanded recognition of African intellectual achievements.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="ivs.jpg" alt="Ivan Van Sertima">
+          <figcaption>
+            <div class="person-name">Ivan Van Sertima</div>
+            <div class="person-dates">1935–2009</div>
+            <p class="person-description">Guyanese-born historian and anthropologist. Best known for "They Came Before Columbus," documenting African presence in the Americas before European contact. Challenged Eurocentric narratives of history and demonstrated African maritime and navigational achievements.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="ab.jpg" alt="Anthony Browder">
+          <figcaption>
+            <div class="person-name">Anthony Browder</div>
+            <div class="person-dates">1944–Present</div>
+            <p class="person-description">Historian, author, and Egyptologist. Founded the Institute of Karmic Guidance and leads educational tours to Egypt. Author of "Nile Valley Contributions to Civilization." Teaches African-centered history and the legacy of Kemet (Ancient Egypt).</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="fcw.jpg" alt="Frances Cress Welsing">
+          <figcaption>
+            <div class="person-name">Frances Cress Welsing</div>
+            <div class="person-dates">1935–2016</div>
+            <p class="person-description">Psychiatrist and author who developed the "Cress Theory of Color Confrontation." Her work "The Isis Papers" analyzed white supremacy as a psychological response to genetic annihilation anxiety. Controversial but influential in Black consciousness movements.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="person">
+          <img src="bs.jpg" alt="Barbara Sizemore">
+          <figcaption>
+            <div class="person-name">Barbara Sizemore</div>
+            <div class="person-dates">1927–2004</div>
+            <p class="person-description">Pioneering educator and first Black woman to lead a major U.S. school district (Washington D.C.). Advocated for Afrocentric education and educational equity. Challenged systemic racism in American education and developed culturally relevant pedagogy.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2 class="category-title">Family Legacy & Personal Heroes</h2>
+      <div class="people-grid">
+
+        <figure class="person">
+          <img src="Grandpere.jpg" alt="Mathias Djoumessi VII">
+          <figcaption>
+            <div class="person-name">Mathias Djoumessi VII</div>
+            <div class="person-dates">Life Dates</div>
+            <p class="person-description">My great-grandfather. Early leader of the Union des Populations du Cameroun (UPC) and founder of the Parti Démocrate Camerounais (PDC). Fought for Cameroonian independence and sovereignty. His legacy continues through family commitment to African liberation.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2 class="category-title">International Allies</h2>
+      <div class="people-grid">
+
+        <figure class="person">
+          <img src="VP.jpg" alt="Vladimir Putin">
+          <figcaption>
+            <div class="person-name">Vladimir Putin</div>
+            <div class="person-dates">1952–Present</div>
+            <p class="person-description">President of Russia. Recognized in some African circles for supporting African sovereignty against Western neocolonialism. Russia has provided military support and partnership to several African nations seeking alternatives to Western domination, though motivations remain complex and geopolitical.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>
